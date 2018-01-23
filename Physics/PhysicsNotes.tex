@@ -2,13 +2,16 @@
 \usepackage{indentfirst}
 \usepackage{tikz}
 \usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage[backend=bibtex]{biblatex}
+\addbibresource{Physics.bib}
 \title{Physics Notes}
 \subtitle{A level Physics}
 \date{Last Updated \today{}}
 \author{Dhruva Lokegaonkar}
 \begin{document}
 \maketitle
-
+\tableofcontents
 \chapter{Circular Motion, Gravitation and Oscillation}
 
 \section{Circular Motion}
@@ -150,5 +153,129 @@
 	\end{itemize}
 
 	Damping is when a oscillating system loses energy (due to friction or air resistance). Critical Damping is minimum amount of energy required to return a damped system to equilibrium without oscillating
+
+\chapter{Communication Systems}
+
+\section{Modulation}
+
+\subsection{F.M. and A.M.}
+
+	When sending information over radio waves, the information must be modulated in some way. A common way of mudulating is Amplitude Modulation or AM. We can see in Fig \ref{fmamcomp} that the amplitude of the modulated wave changes to match the value of the signal. In Frequency Modulation or F.M. the frequency of the modulated wave varies with time. Example can be seen in Fig \ref{fmamcomp}
+
+	\begin{figure}[t]
+		\caption{Comparison of FM and AM \cite{taitra}}
+		\label{fmamcomp}
+		\includegraphics[width=\linewidth]{assets/fmam.png}
+	\end{figure}
+
+\subsection{Sidebands and Bandwidth}
+
+	The frequency of the carrier wave is known as the carrier frequecny ($f_c$). When the carrier wave is modulated, it is known to carry two more frequencies called Sideband frequencies ($f_c - f_m$ and $f_c + f_m$). The bandwidth is $2f_m$
+
+\subsection{Comparison}
+
+	\begin{tabular}{| c | c |}
+		\hline
+		FM & AM \\
+		\hline
+		Less Electrical Interference and Noise & Greater area covered by one transmitter \\
+		Greater bandwidth produces better sound & Smaller bandwidth allows for more stations \\
+		& Cheap Radio Sets \\
+		\hline
+	\end{tabular}
+
+\section{Digtal Signals}
+
+\subsection{Advantages of Digital signals}
+
+	\begin{itemize}
+		\item
+			Noise can be fixed through regeneration.
+		\item
+			Digital Signals are more compatible with modern technologies
+		\item
+			Digital electronic systems are more reliable, robust and easier to build.
+		\item
+			Digital signals build in safegaurds so that if there is an error in recepotions, the required parts of the signal can be sent again.
+	\end{itemize}
+
+\subsection{ADC, DAC and Sampling}
+
+	When converting between analigue and digital signals, signals must be sampled at regular intervals. The rate at which it is sampled is called the Sample Rate. The resoultion at which the signal is sampled is called the bit-depth
+
+
+\section{Crosstalk and Signal Attenuation}
+
+	\begin{quote}
+		Crosstalk or Crosslinking occurs when a signal transmitter in one circuit or channel creates an undesired effect in another circuit or channel
+	\end{quote}
+
+	\begin{quote}
+		Signal Attenuation is the gradual decrease in power of a signal the further it travels.
+	\end{quote}
+
+	The decrease in power from $P_1$ to $P_2$ can be very high. A $\log_{10}$ is used and the ratio is reprented in Bels (often multiplied by 10 and written as deciBels or dB)
+
+	\[ \text{Attenuation}  = 10\log_{10}\left(\frac{P_1}{P_2}  \right) \text{dB}\]
+
+\section{Channels of Communications}
+
+\subsection{Wire Pairs and Co-axial cables}
+
+	Telephones used to use pairs of wires to carry signals. The difference in the Potential differences of the wires was the signal, but they easily picked up noise. The closer the wires were, the less noise was picked up, so they were twisted together.
+
+	Coaxial reduces the amount of crosstalk in the wire when the transmission occurs at high speeds. The copper core usually carries the signal and the copper braid (mettalic shield) is connected to earth. see Fig \ref{coaxial} Since electromagnetic radiation does not travel easily through metal, inteference does not occur at the core.
+
+	\begin{figure}[t]
+		\label{coaxial}
+		\caption{A Coxial Cable \cite{wikicomm:coax}}
+		\includegraphics[width=\linewidth]{assets/coaxial.png}
+	\end{figure}
+
+	\begin{tabular}{| c | c |}
+		\hline
+		Wire Pairs & Coaxial \\
+		\hline
+		Cheap and convenient & Expensice \\
+		Strongly attenuate signal & Less attenuating \\
+		Low bandwidth & High bandwidth \\ 
+		Pushes up inteference/noise & Less inteference and noise \\
+		Crosstalk & less Crosstalk \\
+		Low security & More secure \\
+		\hline
+	\end{tabular}
+
+\subsection{Radio Waves and Microwave links}
+
+	Various electromagnetic waves are used to carry informations. In waves such as skywaves, the ionosphere is used to reflect the waves.
+
+	\begin{tabular}{| c | c | c |}
+		\hline
+		Type & Frequency Range & Distance Travelled \\
+		\hline
+		Surface wave & upto 3MHz & upto 1000Km \\
+		Sky wave & 3 - 30MHz & Worldwide by reflection \\
+		Space wave & 30 - 300MHz & line of sight \\
+		Microwave & 1-300GHz & line of sight, except when retransmitted by sattelite \\
+		\hline
+	\end{tabular}
+
+\subsection{Sattelites and Optic fibre}
+
+	Sattelites offer some extra advantages over skywaves
+
+	\begin{itemize}
+		\item
+			The concentration of ions in the ionosphere is constantly changing and the reflection of skywaves is not always possible
+		\item
+			The sattelite boosts the signal for its return to earth.
+		\item
+			Sattelite communications use higher frequencies and hence have height bandwidth
+		\item
+			More channels are available for communicating on higher frequencies
+	\end{itemize}:q
+
+
+\printbibliography{}
 
 \end{document}
