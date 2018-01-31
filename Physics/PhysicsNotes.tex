@@ -3,6 +3,7 @@
 \usepackage{tikz}
 \usepackage{amsmath}
 \usepackage{pgfplots}
+\usepackage{siunitx}
 \usepackage[backend=bibtex]{biblatex}
 \addbibresource{Physics.bib}
 \title{Physics Notes}
@@ -273,9 +274,121 @@
 			Sattelite communications use higher frequencies and hence have height bandwidth
 		\item
 			More channels are available for communicating on higher frequencies
-	\end{itemize}:q
+	\end{itemize}
 
+\chapter{Thermal Physics}
+
+\section{Changes of state}
+
+\subsection{Energy Changes}
+
+       When a solid is heated, it's temperature starts rising and it's molecules gain kinetic energy. When the solid reaches it's melting point, the heat energy is used to break the intermolacular bonds. The temperature remains constant but the seperation between the particles significantly increases and hence the potential energy of the molecules increases. The solid starts melting. After the solid has completally melted, the temperature starts rising again and the Kinetic energy increases until the liquid reaches it's boiling point. Again, the heat energy is used up in breaking up intermolecular bonds, and the temparature stops rising untill all of the liquid has turned into gas. After that the temperature continues to increase velocity. A summary can be seen in Fig. \ref{energych}
+
+       \begin{figure}[h]
+	       \caption{Energy Changes \cite{edplace:ech}}
+               \label{energych}
+               \includegraphics[width=\linewidth]{assets/EnergyChanges.jpg}
+       \end{figure}
+
+       The energy supplied to a substance when it is channging state (at a constant temperature) is called the latent heat of change in state for that material.
+
+\subsection{Evaporation}
+
+	Liquids can change into gasses without reaching boiling point. In a liquid some molecules move faster than the others. These molecules break free and form a vapor above the liquid. This is called evaporation. Since higher energy particles leave the liquid, the temperature of the liquid decreases.
+
+\section{Internal Energy}
+
+\subsection{Energy of the particles}
+
+	\begin{quote}
+		The internal energy of a system is the sum of the random distribution of kinetic and potential energies of it's atoms or molecules
+	\end{quote}
+
+	There are two ways in which the internal energy of a system can be increased.
+
+	\begin{itemize}
+		\item
+			\textbf{By heating the system} : When a material is heated, the kinetic energy of the particles increases.
+		\item
+			\textbf{By doing work on the system} : When a gas is compressed, the molecues strike the walls and move faster.
+	\end{itemize}
+
+\subsection{What is Temperature}
+
+	Temperature is a measure of the average kinetic energy of the particles in the system. A common scale is the celsius scale, where \SI{0}{\celsius} is the freezing point of water and \SI{100}{\celsius} is the boiling point of water. The Termodynamic or Kelvin scale uses the absolute zero as \SI{0}{\kelvin}. For matter at absolute zero, it is impossible to remove any more energy out of it. The other fixed point is at \SI{273.15}{\kelvin}, the triple point of water.
+
+	\[ \theta (\SI{}{\celsius}) = T (\SI{}{\kelvin}) -273.15 \]
+
+\subsection{The First Law of Thermodynamics}
+
+	\begin{quote}
+		The first law of thermodynamics states that the total energy of an isolated system remains constant.
+	\end{quote}
+
+	This means that the energy supplied to a system by heating it or doing work on it increases the internal energy of the system.
+
+	\begin{align*}
+		\text{Increase in internal energy} &= \text{Energy supplied by heating} +  \text{Energy supplied by doing work} \\
+		\Delta u &= q + w
+	\end{align*}
+
+\section{Thermometers}
+
+\subsection{Types of thermometers}
+
+	Thermometers are devices that are used to measure temperature. They use some property of the material which changes with temperatures. This could be:
+
+	\begin{itemize}
+		\item
+			The resistance of a electrical resistor
+		\item
+			The voltage produced by a thermocouple
+		\item
+			The color of an electrically heated wire
+		\item
+			The volume of a fixed mass of gas at constant pressure
+	\end{itemize}
+
+\subsection{Thermocouple thermometer vs. Resistance thermometer}
+
+
+	\begin{tabular}{| p{0.2\linewidth} | p{0.4\linewidth} | p{0.4\linewidth} |}
+		\hline
+		Feature & Resistance thermometer & Thermocouple thermometer \\
+		\hline
+		robustness & very robust & robust \\
+		range & Thermistor: narrow range, resistance wire: wide range & can be wide \\
+		size & larger than thermocouple, has greater thermal capacity therefore slower acting & smaller than resistance thermometers, has smaller thermal capacity, so quicker acting and can measure temperature at a point \\
+		sensitivity & Thermistor: high sensitivity over narrow range, resistance wires: less sensitive & can be sensitive if appropriate metal are chosen \\
+		linearity & Thermistor : fairly linear over narrow range, resistance wire: good linearity & non-linear so requires callibiration \\
+		remote operation & long conducting wires allow the operator to be at a distance from the thermometer & long conducting wires allow the operator to be at a distance from the termometer \\
+		\hline
+	\end{tabular}
+
+\section{Calculating energy changes}
+
+\subsection{Specific heat capacity}
+
+	\begin{quote}
+		The specific heat capacity of a substance is the energy required per unit mass of the substance to raise the temperature by \SI{1}{\kelvin}
+	\end{quote}
+
+	This can be represented with the following formula
+
+	\begin{align*}
+		\text{Specific heat capacity} &= \frac{\text{energy supplied}}{\text{mass} \times \text{temperature change}} \\
+		C &= \frac{E}{m\Delta\theta}
+	\end{align*}
+
+\subsection{Specific latent heat}
+
+	\begin{quote}
+		The specific latent heat of a substance is the energy per kilogram of the substance to change it's state without any change in temperature
+	\end{quote}
+
+	When a substance melts, the quantity is called the specific latent heat if fusion; for boiling, it's the specific latent heat of vaporisation.
+
+	\[ \text{latent heat} = \frac{\text{Energy to change state}}{\text{mass}} \]
 
 \printbibliography{}
-
 \end{document}
