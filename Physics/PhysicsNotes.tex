@@ -178,9 +178,9 @@
 	\begin{tabular}{| c | c |}
 		\hline
 		FM & AM \\
-		\hline
-		Less Electrical Interference and Noise & Greater area covered by one transmitter \\
-		Greater bandwidth produces better sound & Smaller bandwidth allows for more stations \\
+		\hline 
+		Less Electrical Interference and Noise & Greater area covered by one transmitter \\ 
+		Greater bandwidth produces better sound & Smaller bandwidth allows for more stations \\ 
 		& Cheap Radio Sets \\
 		\hline
 	\end{tabular}
@@ -236,13 +236,13 @@
 	\begin{tabular}{| c | c |}
 		\hline
 		Wire Pairs & Coaxial \\
-		\hline
+		\hline 
 		Cheap and convenient & Expensice \\
-		Strongly attenuate signal & Less attenuating \\
+		Strongly attenuate signal & Less attenuating \\ 
 		Low bandwidth & High bandwidth \\ 
-		Pushes up inteference/noise & Less inteference and noise \\
-		Crosstalk & less Crosstalk \\
-		Low security & More secure \\
+		Pushes up inteference/noise & Less inteference and noise \\ 
+		Crosstalk & less Crosstalk \\ 
+		Low security & More secure \\ 
 		\hline
 	\end{tabular}
 
@@ -389,6 +389,101 @@
 	When a substance melts, the quantity is called the specific latent heat if fusion; for boiling, it's the specific latent heat of vaporisation.
 
 	\[ \text{latent heat} = \frac{\text{Energy to change state}}{\text{mass}} \]
+
+\chapter{Electromagnetism}
+
+\section{Electric Fields}
+
+\subsection{Coulomb's Law}
+
+	An electrically charged object produces an electric field on the space around it. This field exerts a force on the other charged objects in the field. Coulomb's law describes this force.
+
+	\begin{quote}
+		Any two point charges exert an electrical force on each other that is proportional to the product of the charges and inversly proportional to the square of the distance between them.
+	\end{quote}
+
+	This law can be mathematically represented as,
+
+	\begin{align*}
+		F \propto \frac{1}{r^2} &&
+		F \propto Q_1 Q_2
+	\end{align*}
+
+	Combining and resolving the proportionality results in, 
+
+	\begin{align} 
+		F = \frac{Q_1 Q_2}{4\pi \epsilon_0 r^2 } \label{coulombslaw}
+	\end{align}
+
+	Here $\frac{1}{4\pi \epsilon_0}$ is the constant of proportionality, and $\epsilon_0$ is called the permitivity of free space. It equals approximatally \SI{8.85}{\farad\per\meter}
+
+\subsection{Electric field strength}
+
+	\begin{quote}
+		The electric field strength at a point is the force per unit charge exerted on a stationary positive charge at that point
+	\end{quote}
+
+	Mathematically, 
+
+	\begin{align}
+		F = \frac{E}{Q} \label{elecfstr}
+	\end{align}
+
+	For a uniform electric field between charged parallel plates, it is also,
+
+	\[ E = \frac{V}{d} \]
+
+	Where, V is the potential difference between the plates, and d is the distance between them.
+
+	To calculate the electric field strength for a radial field we can combine the formulas \ref{coulombslaw} and \ref{elecfstr},
+
+	\begin{align*}
+		& E = \frac{Q_1 Q_2}{4\pi \epsilon_0 r^2 Q_2} \\
+		\implies &  E = \frac{Q}{4\pi \epsilon_0 r^2}
+	\end{align*}
+
+\section{Electric potential}
+
+\subsection{Energy changes in a uniform field}
+
+	Electrical potential energy is the potential energy of a charge due to itsposition in a electric field. The electric potential at a point is the potential energy per unit charge at that point.
+
+	In a uniform field, this can be represented as,
+
+	\begin{align}
+		V = \frac{W}{Q} \label{unielecpot}
+	\end{align}
+	
+	Where, V is the electric potential, Q is the charge, and W is the work done in maving the charge from the negative plate to the positive plate. The potential of zero is defined as "earth" or "ground".
+
+\subsection{Energy changes in a radial field}
+
+	The electric field strength increases as we move closer to a charged object. To calculate the electric potentialwe can integrate the equation for coulomb's law, equation \ref{coulombslaw}, and combine it with equation \ref{unielecpot} to get.
+
+	\[ V = \frac{Q}{4\pi \epsilon_0 r} \]
+
+	Here the zero potential is defined as the potential at a infinite distance away from the charge.
+
+\subsection{Defining electric potential}
+
+	\begin{quote}
+		The electric potential at a point is equal to the work done in bringing unit positive charge from infinity to a point
+	\end{quote}
+
+\section{Comparing gravitational and electric forces}
+
+	\begin{tabular}{| p{0.5\linewidth} | p{0.5\linewidth} |}
+		\hline
+		Gravitational Field & Electric fields \\
+		\hline \hline
+		\textbf{Origin: } \newline Arises from masses & \textbf{Origin: } \newline Arise from electric charges \\ \hline
+		\textbf{Vector forces: } \newline Only gravitational attraction, no repulsion & \textbf{Vector forces: } \newline Both electrical attraction and repulsion are possible (because of positive and negative charges) \\ \hline
+		\textbf{All gravitional fields: } \newline field strength \newline $g = \frac{F}{m}$. \newline i.e. field strength is force per unit mass & \textbf{All electric fields: } \newline field strength \newline $E = \frac{F}{Q}$. \newline i.e. field strength is force per unit positive charge \\ \hline
+		\textbf{Units: } \newline $F$ is in \SI{}{\newton}, $g$ is in \SI{}{\newton\per\kilo\gram} or \SI{}{\meter\per\second} & \textbf{Units: } \newline $F$ is in \SI{}{\newton}, $E$ is in \SI{}{\newton\per\coulomb} or \SI{}{\volt\per\meter} \\ \hline
+		\textbf{Uniform gravitational fields: } \newline parallel gravitational field lines \newline $g = \text{constant}$ & \textbf{Uniform electric fields: } \newline parallel electric field lines \newline $E = \frac{V}{d} = \text{constant}$ \\ \hline
+		\textbf{Spherical gravitional fields: } \newline radial field lines \newline force given by Newton's laws: $F = \frac{GMm}{r^2}$ \newline field strength is therefore: $g = \frac{GM}{r^2}$ \newline (force and field strength obey an inverse square law with distance) & \textbf{Spherical electric fields: } \newline radial field lines \newline force given by coulomb's law: $F = \frac{Q_1 Q_2}{4\pi \epsilon_0 r^2}$ \newline field strength is therefore: $E = \frac{Q}{4\pi \epsilon_0 r^2}$ \newline force and field strength obey an inverse square law with distance \\ \hline
+		\textbf{Gravitational potential: } \newline given by $\phi = -\frac{GM}{r}$ \newline potential obeys an inverse relationship with distance and is zero at ininity \newline potential is a scalar quantity and is always negative & \textbf{Electic potential: } \newline given by: $V = \frac{Q}{4\pi \epsilon_0 r}$ \newline potential obeys an inverse relationship with distance and is zero at infinity \newline potential is scalar quantity \\ \hline
+	\end{tabular}
 
 \printbibliography{}
 \end{document}
