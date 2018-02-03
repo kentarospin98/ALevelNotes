@@ -4,6 +4,8 @@
 \usepackage{amsmath}
 \usepackage{pgfplots}
 \usepackage{siunitx}
+\usepackage{wrapfig}
+\usepackage{circuitikz}
 \usepackage[backend=bibtex]{biblatex}
 \addbibresource{Physics.bib}
 \title{Physics Notes}
@@ -67,7 +69,7 @@
 	Newtons law can be summaried in the folling equations.
 	
 	\begin{align*}
-		\text{force} &\propto \text{product  of  masses} &
+	\text{force} &\propto \text{product  of  masses} &
 		\\
 		\text{force} &\propto \frac{1}{\text{distance}^2} &
 		\\
@@ -484,6 +486,148 @@
 		\textbf{Spherical gravitional fields: } \newline radial field lines \newline force given by Newton's laws: $F = \frac{GMm}{r^2}$ \newline field strength is therefore: $g = \frac{GM}{r^2}$ \newline (force and field strength obey an inverse square law with distance) & \textbf{Spherical electric fields: } \newline radial field lines \newline force given by coulomb's law: $F = \frac{Q_1 Q_2}{4\pi \epsilon_0 r^2}$ \newline field strength is therefore: $E = \frac{Q}{4\pi \epsilon_0 r^2}$ \newline force and field strength obey an inverse square law with distance \\ \hline
 		\textbf{Gravitational potential: } \newline given by $\phi = -\frac{GM}{r}$ \newline potential obeys an inverse relationship with distance and is zero at ininity \newline potential is a scalar quantity and is always negative & \textbf{Electic potential: } \newline given by: $V = \frac{Q}{4\pi \epsilon_0 r}$ \newline potential obeys an inverse relationship with distance and is zero at infinity \newline potential is scalar quantity \\ \hline
 	\end{tabular}
+
+\section{Capacitors}
+
+\subsection{What are Capacitors}
+
+	\begin{wrapfigure}{R}{0.4\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{assets/capacitor.jpg}
+		\caption{Construction of a Capacitor. \cite{lrnabtelec:cap}}
+		\label{capint}
+	\end{wrapfigure}
+
+	Capacitors are elecronic devices that store energy, and gradually release it. They have two leads connected to two plates seperated by an insulating material called the \textbf{dielectric} When a potential difference is applied across the terminals of a capacitor, equal and opposite charges are stored on the plates. When the potential difference is removed, the stored charge produces it's own volatge. if the capacitor is connected to a complete circuit, then the charge flows out releasing the energy. Figure \ref{capint} shows the construction of a capacitor.
+
+\subsection{Capacitance}
+
+	Different Capacitors have different capacities to store charge. Capacitance is a measure of how much charge a capacitor can store. The greater the capacitance, the greater charge a capacitor stores for a given potential difference acroes it.
+
+	\begin{quote}
+		The capacitance of a capacitor is the charge stored on one plate per unit potential difference between the plates.
+	\end{quote}
+
+	Mathematically,
+
+	\begin{align}
+		\text{Capacitance} &= \frac{\text{Charge}}{\text{Potential difference}} \notag \\
+		C &= \frac{Q}{V} \label{capacitanceeq}
+	\end{align}
+
+	The unit of capacitance is the \textbf{farad}, \SI{}{\farad}
+
+	\[ \SI{1}{\farad} = \SI{1}{\coulomb\per\volt} \]
+
+\subsection{Energy stored in a capacitor}
+
+	\begin{wrapfigure}{R}{0.4\linewidth}
+	\caption{Potential Difference against charge}
+	\centering
+	\label{pdvcap}
+	\begin{tikzpicture}
+		\begin{axis}[
+			xlabel={Charge},
+			ylabel={Potential difference},
+			xticklabels={,,},
+			yticklabels={,,},
+			xmin=0,
+			xmax=10,
+			ymin=0,
+			ymax=10,
+			domain=0:8,
+			axis x line=bottom,
+			axis y line=left,
+			width=0.4\textwidth
+			]
+			\addplot[no marks]{x};
+		\end{axis}
+	\end{tikzpicture}
+	\end{wrapfigure}
+	
+	As the charge stored in a capacitor increases, the repulsion makes it harder to store more charge in the capacitor, and more energy us required. Fig \ref{pdvcap} shows a graph of Voltage against charge on a capacitor. The work done in moving charge $Q$ across a potential difference of $V$ is the product $QV$. Here, the work done is the area under the graph of figure \ref{pdvcap}, 
+
+	\begin{align}
+		W = \frac{1}{2}QV \label{capawork}
+	\end{align}
+
+	by substituting equation \ref{capacitanceeq} into equation \ref{capawork} we get two new equations,
+
+	\begin{align}
+		W &= \frac{CV^2}{2} \\
+		W &= \frac{Q^2}{2C}
+	\end{align}
+
+\section{Capacitors in a circuit}
+
+\subsection{Capacitors in parallel}
+
+	When two capacitors are connected in parallel, they are equivalent to a single capacitor with larger plates. Hence their combined capacitance is the sub of their individual capacitances.
+
+	\[ C_{\text{total}} = C_1 + C_2 + C_3 + \text{...} \]
+
+	\begin{figure}[h]
+	\caption{Capacitors in parallel}
+	\label{capinpar}
+	\centering
+	\begin{circuitikz} \draw
+		(0, 0) -- (1, 0)
+		(1, 0) -- (1, 1)
+		to[capacitor, C=$C_1$] (5, 1)  -- (5, 0)
+		(1, 0) -- (1, -1)
+		to[capacitor, C=$C_2$] (5, -1) -- (5, 0)
+		-- (6, 0)
+		;
+	\end{circuitikz}
+	\end{figure}
+
+\subsection{Capacitors in series}
+
+	For a system where capacitors are connected in series, like in fig \ref{capinser}, the reciprocal of the cotal capacitance is the sub of the reciprocal of the individual capacitances.
+
+	\[ C_{\text{total}} = \frac{1}{C_1} + \frac{1}{C_2} + \frac{1}{C_2} + \text{...} \]
+
+	\begin{figure}[h]
+	\caption{Capacitors in series}
+	\label{capinser}
+	\centering
+	\begin{circuitikz}
+		\draw
+		(0, 0) to[capacitor, C=$C_1$] (2, 0) to[capacitor, C=$C_2$] (4, 0)
+		;
+	\end{circuitikz}
+	\end{figure}
+
+\subsection{Sharing charge between capacitors}
+
+	\begin{wrapfigure}{R}{0.3\linewidth}
+	\caption{Capacitors charing charges}
+	\label{capshare}
+	\centering
+	\begin{circuitikz} \draw
+		(0, 0) -- (0, 1) to[capacitor, C=$C_1$] (2, 1) 
+		(0, 0) -- (0, -1) to[capacitor, C=$C_2$] (2, -1) -- (2, 1)
+		;
+	\end{circuitikz}
+	\end{wrapfigure}
+
+	If a capacitor, with a capacitance of $C_1$ is charged with a power supply to a voltage of $V_{\text{init}}$, and then connected to a second capacitor with capacitance $C_2$, the charge is shared between the capacitors. As showen in Figure \ref{capshare}, the capacitors are in parrallel, so the capacitance is calculated by, 
+	\begin{align*}
+		C_{\text{total}} &= C_1 + C_2 \\
+		Q &= C_1 V_{\text{init}}
+	\end{align*}
+
+	Since charge is conserved, we can calculate the potential difference across the capacitors as,
+
+	\[ V_{\text{new}} = \frac{Q}{C_{\text{total}}} \]
+
+\section{Capacitance of isolated bodies}
+
+	All bodies have capacitance. For a conducting sphere of radius $r$ insuated from its surroundings, carring a charge of $Q$, will have a potentail on the surface of $V$, and a capacitance of $C$, where,
+
+	\begin{align*}
+		V = \frac{Q}{4\pi\epsilon_0 r} && C = 4\pi\epsilon_0 r
+	\end{align*}
 
 \printbibliography{}
 \end{document}
