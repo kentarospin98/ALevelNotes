@@ -149,5 +149,137 @@
 
 	The decrease in solubility of Group 2 sulphates can be explained in terms of the relative values of the enthalpy change of hydration and the coresponding lattice energies.
 
+\chapter{Electrochemistry}
+
+\section{Electrolysis}
+
+\subsection{Electrolytic cells}
+
+	\begin{quote}
+		Electrolysis is the decomposition of a compound by an electric current
+	\end{quote}
+
+	Electrolysis is carried out in an electrolysis cell. The electrolyte is the compound that is decomposed. The electrodes are rods which conduct electricity. Anodes are positive electrodes and Cathodes are negative. The power supply is always a Direct Current.
+
+\subsection{Redox reactions}
+
+	Electrolysis is a redox reaction. During electrolysis positive ions move to the cathode and gain electrons, where as the negative ions move to the anode and lose electrons. The electrolysis of Zinc Chloride can be summarised by the following reactions:
+
+	\begin{align*}
+		\text{Cathode :} && \ce{Zn^{2+} + 2e- &-> Zn} \\
+		\text{Anode :} && \ce{2Cl- &-> Cl2 + 2e-} \\
+		\text{Overall :} && \ce{ZnCl2 &-> Zn + Cl2}
+	\end{align*}
+
+\section{Quantitive electrolysis}
+
+	The mass of the substance deposited is directly proportional to the charge that flows through the electrolyte. The charge of \SI{1}{\mole} of electrons is said to be 1 Faraday. It's value is equal to \SI{96500}{\coulomb\per\mole}. This can be used to calculate the mass of the deposited substance. For example, in the following equations, \ce{Cu^{2+}} required \SI{2}{\mole} of electrons to produce \SI{1}{\mole} of \ce{Cu} atoms.
+
+	\[ \ce{Cu^{2+} +2e- -> Cu} \]
+
+	This means it needs 2 Faradays of electricity to produce \SI{1}{\mole} of \ce{Cu}. If a current of $x$ amperes went through it for $t$ seconds, a charge of $xt$ went through the cell. The number of Daradays that passed through the electrolyte is:
+
+	\[ F = \frac{xt}{96500} \]
+
+	The number of moles of \ce{Cu} is half that value. The mass can be calculated by multiplying the molar mass of \ce{Cu} to the number of moles of \ce{Cu}
+
+\section{Electrode Potentials}
+
+\subsection{Metal/Metal ion system}
+
+	When a metal is placed into a solution of it's ions, an electric potential is established between the metal and the metal ion solution. This potential is not measurable but the difference between the metal/metal ion system and another system can be measued.
+
+\subsection{Electrode potentials and redox reactions}
+
+	Electrode potential values give us an indication of how easy it is to reduce a substance. The more positive the electrode potential is, the easier is it to redice it's ions.
+
+\subsection{Standard electrode potential}
+
+	The voltage of an electrochemical cell is affected by concentration, temperature and pressure. Hence, when comparing electrode potentials, standard conditions are used. There are:
+
+	\begin{itemize}
+		\item
+			Concentration of ions at \SI{1.00}{\mole\per\deci\metre\cubed}
+		\item
+			Temperature at \SI{25}{\celsius} (\SI{298}{\kelvin})
+		\item
+			Gasses at \SI{1}{atm} (\SI{101}{\kilo\pascal})
+		\item
+			The value of the electrode potential is measured against the standard hydrogen electrode.
+	\end{itemize}
+
+	\begin{quote}
+		The electrode potential, $H^\ominus$, for a half-cell is the voltage measued under standard conditions with a standard hydrogen electrode as the other half-cell.
+	\end{quote}
+
+\section{Using $E^\ominus$ values}
+
+\subsection{Using $E^\ominus$ values to predict cell voltages}
+
+	$E^\ominus$ values can be used to calculate the voltage of an electrochemical cell made up of two half-cells. It is the difference between the $E^\ominus$ values of the two cells. Consider a cell with a \ce{Ag/Ag+} half cell at the cathode and a \ce{Zn/Zn+} cell at the anode.
+
+	\begin{align*}
+		\ce{ Ag+ (aq) + e- &<=> Ag(s) } && &E^\ominus &= \SI[explicit-sign=+]{0.80}{\volt} \\
+		\ce{ Zn^{2+} (aq) +2e- &<=> Zn (s) } && &E^\ominus &= \SI[explicit-sign=+]{-0.76}{\volt}
+	\end{align*}
+
+	The voltage of this cell is \SI{1.56}{\volt}
+
+\subsection{$E^\ominus$ values can help deduce the direction of electron flow}
+
+	Looking at the previous equations again, we can see that \ce{Zn^{2+}} ions are more difficult to reduce than \ce{Ag+} ions. So, the \ce{Zn} metal will ;ose electrons to the \ce{Ag+/Ag} half-cell, and the \ce{Ag=} ions will accept electrons from the \ce{Zn^{2+}/Zn} half-cell. Electrons will flow from the \ce{Zn^{2+}/Zn} half-cell to the \ce{Ag+/Ag} half cell in the circuit.
+
+\subsection{Using $E^\ominus$ values to predict of a reaction will occur}
+
+	The $E^\ominus$ values telll us how good of a reducing agent or oxidising agent a chemical is.
+
+	\begin{itemize}
+		\item
+			The more positive the value of $E^\ominus$, the greater the tendency for the half-equation to proceed in the forward direction, the better oxidising agent it is.
+		\item
+			The less positive the value of $E^\ominus$, the greater the tendency for the half-equation to proceed in the backward direction, the better reducing agen it is.
+	\end{itemize}
+
+	A reaction occurs in a direction such that the stronger oxidising agent oxidises the stronger reducing agent. For example, we can answer the question whether Chlorine will oxidise \ce{Fe^{2+}} ions to \ce{Fe^{3+}} ions, by looking at their half-equations.
+
+	\begin{align*}
+		\ce{ 1/2Cl2 (g) + e- &<=> Cl- (aq)} && &E^\ominus &= \SI[explicit-sign=+]{1.36}{\volt} \\
+		\ce{ Fe^{3+} (aq) + e- &<=> Fe^{2+} (aq) } && &E^\ominus &= \SI[explicit-sign=+]{0.77}{\volt}
+	\end{align*}
+
+	We can see that \ce{Cl2} is a better oxidising agent that \ce{Fe^{2+}} and \ce{Cl2} oxidising \ce{Fe^{2+}} to \ce{Fe^{3+}} is feasable.
+
+	\[ \ce{1/2Cl2 (g) + Fe^{2+} (aq) -> Cl- (aq) + Fe^{3+} (aq) } \]'=
+
+\section{Non standard Electrode Potentials}
+
+	The effect tof concentration and temperature on the value of $E_{\text{cell}}$ can be deduced by using the Nerst equation. For a given electrode, the electrode potenetal, $E$, is given by,
+
+	\[ E = E^\ominus + \frac{RT}{zF}\ln{\frac{\text{[oxidised form]}}{\text{[reduced form]}}} \]
+
+	\begin{align*}
+		\text{Where } 
+		& E^\ominus \text{ is the standard electrode potential} \\
+		& R \text{ is the gas constant \SI{8.314}{\joule\per\kelvin\per\mole}} \\
+		& T \text{ is the temperature in Kelvin} \\
+		& z \text{ is the number of electrons transfered in the reaction} \\
+		& F \text{ is the value of the Faraday constant, \SI{96500}{\coulomb\per\mole}}
+	\end{align*}
+
+\section{Cells and Batteries}
+
+	At this point im bored as heck. Summarise the folling sub topics in the book and send me, i'll add it here:
+
+	\begin{itemize}
+		\item
+			Rechargable Cells
+		\item
+			Solid state Cells
+		\item
+			Hydrogen-oxygen fuel Cells
+	\end{itemize}
+
+	The rest is useless.
+
 \printbibliography{}
 \end{document}
