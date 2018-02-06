@@ -629,5 +629,58 @@
 		V = \frac{Q}{4\pi\epsilon_0 r} && C = 4\pi\epsilon_0 r
 	\end{align*}
 
+\section{Components of an electronic sensing system}
+
+\subsection{Piezoelectric speakers}
+
+	Some crystals such as quartz produce an electric field when a force is applied and the shape of the crystal changes. This is called the piezoelectric effect. Such crystals are used in microphones as piezoelectric transducers.
+
+\subsection{The Light-Dependent Resistor (LDR)}
+
+	\begin{wrapfigure}{R}{0.5\linewidth}
+	\caption{Resistance/Light Intensity Graph for an LDR}
+	\label{ldrgr}
+	\centering
+	\begin{tikzpicture}
+                 \begin{axis}[
+			xlabel={Light Intensity/\SI{}{\lux}},
+			ylabel={Resistance/\SI{}{\ohm}},
+                        xticklabels={,,},
+                        yticklabels={,,},
+                        xmin=0,
+                        xmax=10,
+                        ymin=0,
+                        ymax=10,
+                        domain=0:8,
+                        axis x line=bottom,
+                        axis y line=left,
+                        width=0.4\textwidth,
+                        ]
+			\addplot[no marks]{5/x};
+                   \end{axis}
+	\end{tikzpicture}
+	\end{wrapfigure} 
+
+
+	A LDR is made of a high-resistance semiconductor. If light falling on the LDR is of high enough frequency, photons are absorbed by the semiconductor. As some photons are absorbed, electrons are released from the atoms in the semiconductor. The resulting free electrons conduct electricity and reduce the resistance of the semiconductor. Fig. \ref{ldrgr} Shows the relationship of Resistance and light intensity, and Fig. \ref{ldrsen} Shows an LDR used in a circuit.
+
+
+	\begin{wrapfigure}{R}{0.6\linewidth}
+	\caption{LDR is a circuit}
+	\label{ldrsen}
+	\centering
+	\begin{circuitikz}\draw
+		(0, 3) to[short, o-] (0, 4) -- (2, 4)
+		to[generic] (2, 2)
+		to[photoresistor] (2, 0)
+		-- (0, 0)
+		to[short, -o] (0, 1)
+		(0, 2) node[] {\SI{10}{\volt}}
+		(2, 2) to[short, -o] (4, 2)
+		(2, 0) to[short, -o] (4, 0)
+		(4, 1) node[] {$V_{out}$}
+		;
+	\end{circuitikz}
+	\end{wrapfigure}
 \printbibliography{}
 \end{document}
