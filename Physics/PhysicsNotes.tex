@@ -682,5 +682,126 @@
 		;
 	\end{circuitikz}
 	\end{wrapfigure}
+
+\subsection{Thermistor}
+
+	Thermistors are often made of a semiconductor material. When the temperature of the thermistor rises, the number of free electrons increases, reducing it's resistance. A thermistor with such a property is called a negative temperature coefficient thermistor. Fig. \ref{therm} shows how the resistance of a thermistor changes with temperature.
+
+	\begin{figure}[h]
+	\caption{Temperature/Resistance of thermistors and wires}
+	\label{therm}
+	\centering
+	\begin{tikzpicture}
+                 \begin{axis}[
+			xlabel={Temperature/\SI{}{\celsius}},
+			ylabel={Resistance/\SI{}{\ohm}},
+                        xticklabels={,,},
+                        yticklabels={,,},
+                        xmin=0,
+                        xmax=10,
+                        ymin=0,
+                        ymax=10,
+                        domain=0:8,
+                        axis x line=bottom,
+                        axis y line=left,
+                        width=0.4\textwidth,
+                        ]
+			\addplot[no marks]{5/x};
+			\addplot[no marks]{x/5+2};
+                   \end{axis}
+	\end{tikzpicture}
+	\end{figure}
+
+\subsection{The metal wire strain gauge}
+
+	A strain gauge takes advantage of the change in resistance of a metal wire as it's length and cross-sectional area changes. When a strain gauge is pressed, it's resistance increases.
+
+\section{The operational Amplifier.}
+
+	An amplifier produces an output with more power and usually more voltage than the input. Operational amplifier or op-amps have a very large gain and uses an external circuit to reduce the gain. The open-loop voltage $G_0$ is given by:
+
+	\begin{align*}
+		G_0 &= \frac{\text{output voltage}}{\text{input voltage}} \\
+		G_0 &= \frac{V_{\text{out}}}{V^+r-V^-}
+	\end{align*}
+
+	\begin{wrapfigure}{R}{0.8\linewidth}
+	\caption{an Op-amp}
+	\label{opamp}
+	\centering
+	\begin{circuitikz}\draw
+		(0, 0) node[op amp] (opamp) {} 
+		(opamp.+) node[left] {Non-inverting input $V^+$}
+		(opamp.-) node[left]{Inverting input $V^-$}
+		(opamp.out) node[right] {Output}
+		(opamp.up) node[vcc] {$+V_s$}
+		(opamp.down) node[vee] {$-V_s$}
+		;
+	\end{circuitikz}
+	\end{wrapfigure}
+
+\subsection{The properties of an ideal op-amp}
+
+	The ideal op-amp has the following properties:
+	\begin{itemize}
+		\item
+			Infinite open loop voltage
+		\item
+			Infinite input resistance (or impedance)
+		\item
+			Zero input resistance (or impedance)
+		\item
+			Infinite bandwidth
+		\item
+			Infinite slew rate (or zero time delay)
+		\item
+			Zero noise contribution.
+	\end{itemize}
+
+\subsection{The op-amp as a comparator}
+
+	Consider the op-amp in Fig. \ref{opamp}. The output voltage is given by $V_{out}=G_0\times(V^+-V^-)$. When $V^+>V^-$ and $G_0$ is a very large number, $V_{out}$ is saturated to $+V_s$ and when $V^+<V^-$, $V_{out}$ is saturated tp $-V_s$
+
+\subsection{Negative feedback}
+
+	Negative feedback is when a high output causes a series of reactions resulting in the output to decrease and vice versa. We can use this to create a special op-amp circuit. Consider the op-amp in Fig \ref{negfd}. In this system $V_\text{in} = V_\text{out}$ and hence the $G = \frac{G_0}{1+G_0} ~= 1$. This op-amp draws very little current from the input, yet it can supply resonable current from it's output, thereby working as a buffer.
+
+	\begin{figure}[h]
+	\label{negfd}
+	\centering
+	\caption{Op-amp in a feedback loop}
+	\begin{circuitikz}
+		\draw
+		(0, 0) node[op amp] (opamp) {}
+		(-2, -0.5) node[left] {$V_{\text{in}}$}
+		(-2, -0.5) -- (opamp.+)
+		(opamp.out) |- (-1, 1.25) -| (opamp.-)
+		(opamp.out) to[short, *-o] (2, 0) node[right] {$V_{\text{out}}$}
+		;
+	\end{circuitikz}
+	\end{figure}
+
+\subsection{The inverting amplifier}
+
+	Fig \ref{invopamp} shows an op-amp set up as an inverting amplifier. Point P is knows as an virtual ground.
+
+	\begin{figure}[h]
+	\label{invopamp}
+	\centering
+	\caption{Op-amp as a inverting amplifier}
+	\begin{circuitikz}
+		\draw
+		(0, 0) node[op amp] (opamp) {}
+		(-2, 0.5) node[label=below:P] (p) {}
+		(0, -2) node[ground] (gr) {}
+		(-4, -2) to[short, -o] (gr) to[short, o-] (2, -2)
+		(opamp.+) |- (gr)
+		(-4, 0.5) to[european resistors, R=$R_\text{in}$, -o] (p) -- (opamp.-)
+		;
+	\end{circuitikz}
+	\end{figure}
+
+
 \printbibliography{}
+
 \end{document}
